@@ -234,21 +234,8 @@ That's good enough for the time being. Let's add in the other fusions now.
 # load the covariates
 dx$USI <- substr(colnames(dx), 1, 6) # avoid duplicate weirdness 
 target_covs <- read.csv("target_covs.eligible.csv", row=1)
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
-```
-
-```r
 stopifnot(all(dx$Primary.Fusion == target_covs[dx$USI, "Primary.Fusion"]))
-```
 
-```
-## Error in eval(expr, envir, enclos): object 'target_covs' not found
-```
-
-```r
 # fusionGroup for panel 2A
 dx$fusion <- dx$Primary.Fusion
 fusions_list <- read.table("fusions.txt")[, 1]
